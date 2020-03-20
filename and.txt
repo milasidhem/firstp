@@ -1,0 +1,39 @@
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main2);
+        btn = (Button)findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {}
+            public void Affichage(View b){
+                Toast.makeText(getApplicationContext(),"voici le texte : "+nm1.getText().toString(),Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+public class MainActivity extends Activity {
+ Button btn;
+ CheckBox box;
+ Toast t;
+
+    @Override
+    protected void onCreate(Bundle b) {
+        super.onCreate(b);
+        setContentView(R.layout.activity_main);
+
+        btn=findViewById(R.id.bone);
+        box=findViewById(R.id.chec);
+        btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if(box.isChecked()){ t=Toast.makeText(getApplicationContext(),"hiii",Toast.LENGTH_SHORT);
+                t.show();}
+             else{ t=Toast.makeText(getApplicationContext(),"cooon",Toast.LENGTH_SHORT);
+
+             t.setGravity(Gravity.TOP,0,0);
+             t.show();}
+            }
+        });
+    }
+
+}
